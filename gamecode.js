@@ -1,8 +1,8 @@
-var mapWidth = 20;
-var mapHeight = 20;
+var mapWidth = 10;
+var mapHeight = 10;
 
-var playerX = 4;
-var playerY = 4;
+var playerX = 2;
+var playerY = 2;
 
 var gameAreaWidth = 0;
 var gameAreaHeight = 0;
@@ -12,28 +12,50 @@ var sqaureHeight = 0;
 var playerHealth = 37;
 var maxHealth = 100;
 
-var map = [
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+var maps = []
+
+cmap = 0;
+
+maps[0] = [
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 1, 1, 1, 1, 1, 1, 2, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
+
+maps[1] = [
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 0, 1, 0, 0, 0, 1, 1, 1, 1],
+  [1, 0, 1, 0, 1, 0, 1, 1, 1, 1],
+  [1, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+];
+
+maps[2] = [
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+];
+
+var map = maps[cmap];
 
 var keys = []
 
@@ -53,12 +75,19 @@ function gameInit() {
 }
 
 function gameLoop() {
+  sqaureWidth = gameAreaWidth / mapWidth;
+  sqaureHeight = gameAreaHeight / mapHeight;
   ctx.clearRect(0, 0, c.width, c.height);
   for (var i=0;i<mapHeight;i++) {
     for (var j=0;j<mapWidth;j++) {
       if (map[i][j] == 1) {
         ctx.beginPath();
         ctx.fillStyle = "black";
+        ctx.rect(j * sqaureWidth, i * sqaureHeight, sqaureWidth, sqaureHeight);
+        ctx.fill();
+      } else if (map[i][j] == 2) {
+        ctx.beginPath();
+        ctx.fillStyle = "green";
         ctx.rect(j * sqaureWidth, i * sqaureHeight, sqaureWidth, sqaureHeight);
         ctx.fill();
       }
@@ -74,37 +103,61 @@ function gameLoop() {
   ctx.fill();
   ctx.beginPath()
   ctx.lineWidth = "4";
-  ctx.strokeStyle = "black";
+  ctx.strokeStyle = "blue";
   ctx.rect(300, 0, 100, 20);
   ctx.stroke()
   
 }
 
 function runCode() {
-  eval(gameCode.value);
+  if (playerHealth > 0) {
+    eval(gameCode.value);
+  }
 }
 
-function moveRight() {
-  playerX+=1;
-  if (map[playerY][playerX] == 1) {
-    playerX-=1;
-  }
-}
-function moveLeft() {
-  playerX-=1;
-  if (map[playerY][playerX] == 1) {
+function moveRight(x) {
+  for (var i=0;i<x;i++) {
     playerX+=1;
+    if (collide[playerY][playerX]) {
+      playerX-=1;
+    }
   }
 }
-function moveDown() {
-  playerY+=1;
-  if (map[playerY][playerX] == 1) {
-    playerY-=1;
+function moveLeft(x) {
+  for (var i=0;i<x;i++) {
+    playerX-=1;
+    if (collide[playerY][playerX]) {
+      playerX+=1;
+    }
   }
 }
-function moveUp() {
-  playerY-=1;
-  if (map[playerY][playerX] == 1) {
+function moveDown(x) {
+  for (var i=0;i<x;i++) {
     playerY+=1;
+    if (collide[playerY][playerX]) {
+      playerY-=1;
+    }
   }
+}
+function moveUp(x) {
+  for (var i=0;i<x;i++) {
+    playerY-=1;
+    if (collide[playerY][playerX]) {
+      playerY+=1;
+    }
+  }
+}
+
+function collide(x, y) {
+  if (map[y][x] == 1) {
+    playerHealth -= 1;
+    return true;
+  } else if (map[y][x] == 2) {
+    cmap += 1;
+    map = maps[cmap];
+    playerX = 2;
+    playerY = 2;
+    return true;
+  }
+  return false;
 }
