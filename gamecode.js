@@ -9,7 +9,7 @@ var gameAreaHeight = 0;
 var sqaureWidth = 0;
 var sqaureHeight = 0;
 
-var playerHealth = 37;
+var playerHealth = 100;
 var maxHealth = 100;
 
 var maps = []
@@ -99,12 +99,12 @@ function gameLoop() {
   ctx.fill();
   ctx.beginPath();
   ctx.fillStyle = "red";
-  ctx.rect(300, 0, (100 / maxHealth) * playerHealth, 20);
+  ctx.rect(296, 0, (100 / maxHealth) * playerHealth, 20);
   ctx.fill();
   ctx.beginPath()
   ctx.lineWidth = "4";
   ctx.strokeStyle = "blue";
-  ctx.rect(300, 0, 100, 20);
+  ctx.rect(292, 0, 104, 20);
   ctx.stroke()
   
 }
