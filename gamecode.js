@@ -15,6 +15,8 @@ var maxHealth = 100;
 var maps = []
 
 cmap = 0;
+var score = 0;
+var scoreCounter = 0;
 
 maps[0] = [
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -66,6 +68,7 @@ var c=0;
 function gameInit() {
   c = document.getElementById("gameArea");
   gameCode = document.getElementById("gameCodeArea");
+  score = document.getElementById('score');
   ctx = c.getContext("2d");
   gameAreaWidth = c.width;
   gameAreaHeight = c.height;
@@ -154,6 +157,8 @@ function collide(x, y) {
     return true;
   } else if (map[x][y] == 2) {
     cmap += 1;
+    scoreCounter += 50;
+    score.innerHTML = 'Score ' + scoreCounter
     map = maps[cmap];
     playerX = 1;
     playerY = 1;

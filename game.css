@@ -1,3 +1,12 @@
 #gameArea {
   border: 3px solid black;
 }
+#gameCodeArea {
+	display: block;
+	margin-top: 10px;
+    padding-top: 20px;
+}
+#score {
+	padding-top:20px;
+	padding-bottom: 20px;
+}
