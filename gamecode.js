@@ -78,8 +78,8 @@ function moveLeft() {
   playerX-=20;
 }
 function moveDown() {
-  playerX+=20;
+  playerY+=20;
 }
 function moveUp() {
-  playerX-=20;
+  playerY-=20;
 }
