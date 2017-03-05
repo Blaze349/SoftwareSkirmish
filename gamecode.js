@@ -1,8 +1,8 @@
 var mapWidth = 20;
 var mapHeight = 20;
 
-var playerX = 40;
-var playerY = 40;
+var playerX = 4;
+var playerY = 4;
 
 var gameAreaWidth = 0;
 var gameAreaHeight = 0;
