@@ -1,9 +1,5 @@
 var mapWidth = 20;
 var mapHeight = 20;
-var gameAreaWidth = 400;
-var gameAreaHeight = 400;
-var sqaureWidth = gameAreaWidth / mapWidth;
-var sqaureHeight = gameAreaHeight / mapHeight;
 
 var playerX = 40;
 var playerY = 40;
@@ -35,21 +31,27 @@ var keys = []
 
 var gameCode = 0;
 var ctx = 0;
+var c=0;
 
 function gameInit() {
-  var c = document.getElementById("gameArea");
+  c = document.getElementById("gameArea");
   gameCode = document.getElementById("gameCodeArea");
   ctx = c.getContext("2d");
+  var gameAreaWidth = c.width;
+  var gameAreaHeight = c.height;
+  var sqaureWidth = gameAreaWidth / mapWidth;
+  var sqaureHeight = gameAreaHeight / mapHeight;
   setInterval(gameLoop, 10);
 }
 
 function gameLoop() {
-  for (var i=0;i<mapHeight-1;i++) {
-    for (var j=0;j<mapWidth-1;j++) {
+  ctx.clearRect(0, 0, c.width, c.height);
+  for (var i=0;i<mapHeight;i++) {
+    for (var j=0;j<mapWidth;j++) {
       if (map[i][j] == 1) {
         ctx.beginPath();
         ctx.fillStyle = "black";
-        ctx.rect(j * mapWidth, i * mapHeight, sqaureWidth, sqaureHeight);
+        ctx.rect(j * sqaureWidth, i * sqaureHeight, sqaureWidth, sqaureHeight);
         ctx.fill();
       }
     }
