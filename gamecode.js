@@ -1,8 +1,8 @@
 var mapWidth = 10;
 var mapHeight = 10;
 
-var playerX = 2;
-var playerY = 2;
+var playerX = 1;
+var playerY = 1;
 
 var gameAreaWidth = 0;
 var gameAreaHeight = 0;
@@ -155,8 +155,8 @@ function collide(x, y) {
   } else if (map[x][y] == 2) {
     cmap += 1;
     map = maps[cmap];
-    playerX = 2;
-    playerY = 2;
+    playerX = 1;
+    playerY = 1;
     return true;
   }
   return false;
