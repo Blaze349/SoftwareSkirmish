@@ -4,13 +4,13 @@ var mapHeight = 20;
 var playerX = 4;
 var playerY = 4;
 
-var playerHealth = 37;
-var maxHealth = 100;
-
 var gameAreaWidth = 0;
 var gameAreaHeight = 0;
 var sqaureWidth = 0;
 var sqaureHeight = 0;
+
+var playerHealth = 37;
+var maxHealth = 100;
 
 var map = [
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
