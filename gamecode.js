@@ -1,6 +1,11 @@
 var mapWidth = 20;
 var mapHeight = 20;
 
+var gameAreaWidth = 0;
+var gameAreaHeight = 0;
+var sqaureWidth = 0;
+var sqaureHeight = 0;
+
 var playerX = 40;
 var playerY = 40;
 
@@ -37,10 +42,10 @@ function gameInit() {
   c = document.getElementById("gameArea");
   gameCode = document.getElementById("gameCodeArea");
   ctx = c.getContext("2d");
-  var gameAreaWidth = c.width;
-  var gameAreaHeight = c.height;
-  var sqaureWidth = gameAreaWidth / mapWidth;
-  var sqaureHeight = gameAreaHeight / mapHeight;
+  gameAreaWidth = c.width;
+  gameAreaHeight = c.height;
+  sqaureWidth = gameAreaWidth / mapWidth;
+  sqaureHeight = gameAreaHeight / mapHeight;
   setInterval(gameLoop, 10);
 }
 
