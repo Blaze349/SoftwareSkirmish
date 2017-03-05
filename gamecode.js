@@ -152,7 +152,7 @@ function collide(x, y) {
   if (map[y][x] == 1) {
     playerHealth -= 1;
     return true;
-  } else if (map[y][x] == 2) {
+  } else if (map[x][y] == 2) {
     cmap += 1;
     map = maps[cmap];
     playerX = 2;
