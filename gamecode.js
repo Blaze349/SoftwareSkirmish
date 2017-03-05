@@ -63,7 +63,7 @@ function gameLoop() {
   }
   ctx.beginPath();
   ctx.fillStyle = "red";
-  ctx.rect(playerX, playerY, sqaureWidth, sqaureHeight);
+  ctx.rect(playerX * sqaureWidth, playerY * sqaureHeight, sqaureWidth, sqaureHeight);
   ctx.fill();
 }
 
@@ -72,14 +72,14 @@ function runCode() {
 }
 
 function moveRight() {
-  playerX+=20;
+  playerX+=1;
 }
 function moveLeft() {
-  playerX-=20;
+  playerX-=1;
 }
 function moveDown() {
-  playerY+=20;
+  playerY+=1;
 }
 function moveUp() {
-  playerY-=20;
+  playerY-=1;
 }
