@@ -149,7 +149,7 @@ function moveUp(x) {
 }
 
 function collide(x, y) {
-  if (map[y][x] == 1) {
+  if (map[x][y] == 1) {
     playerHealth -= 1;
     return true;
   } else if (map[x][y] == 2) {
