@@ -116,7 +116,7 @@ function runCode() {
 }
 
 function moveRight(x) {
-  for (var i=0;i<x;i++) {
+  for (var z=0;z<x;z++) {
     playerX+=1;
     if (collide(playerY, playerX)) {
       playerX-=1;
@@ -124,7 +124,7 @@ function moveRight(x) {
   }
 }
 function moveLeft(x) {
-  for (var i=0;i<x;i++) {
+  for (var z=0;z<x;z++) {
     playerX-=1;
     if (collide(playerY, playerX)) {
       playerX+=1;
@@ -132,7 +132,7 @@ function moveLeft(x) {
   }
 }
 function moveDown(x) {
-  for (var i=0;i<x;i++) {
+  for (var z=0;z<x;z++) {
     playerY+=1;
     if (collide(playerY, playerX)) {
       playerY-=1;
@@ -140,7 +140,7 @@ function moveDown(x) {
   }
 }
 function moveUp(x) {
-  for (var i=0;i<x;i++) {
+  for (var z=0;z<x;z++) {
     playerY-=1;
     if (collide(playerY, playerX)) {
       playerY+=1;
