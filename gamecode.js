@@ -81,30 +81,44 @@ function gameLoop() {
 }
 
 function runCode() {
-  eval(gameCode.value);
+  if (playerHealth > 0) {
+    eval(gameCode.value);
+  }
 }
 
-function moveRight() {
-  playerX+=1;
-  if (map[playerY][playerX] == 1) {
-    playerX-=1;
-  }
-}
-function moveLeft() {
-  playerX-=1;
-  if (map[playerY][playerX] == 1) {
+function moveRight(x) {
+  for (var i=0;i<x;i++) {
     playerX+=1;
+    if (map[playerY][playerX] == 1) {
+      playerX-=1;
+      playerHealth -= 1;
+    }
   }
 }
-function moveDown() {
-  playerY+=1;
-  if (map[playerY][playerX] == 1) {
-    playerY-=1;
+function moveLeft(x) {
+  for (var i=0;i<x;i++) {
+    playerX-=1;
+    if (map[playerY][playerX] == 1) {
+      playerX+=1;
+      playerHealth -= 1;
+    }
   }
 }
-function moveUp() {
-  playerY-=1;
-  if (map[playerY][playerX] == 1) {
+function moveDown(x) {
+  for (var i=0;i<x;i++) {
     playerY+=1;
+    if (map[playerY][playerX] == 1) {
+      playerY-=1;
+      playerHealth -= 1;
+    }
+  }
+}
+function moveUp(x) {
+  for (var i=0;i<x;i++) {
+    playerY-=1;
+    if (map[playerY][playerX] == 1) {
+      playerY+=1;
+      playerHealth -= 1;
+    }
   }
 }
